@@ -351,3 +351,7 @@ gcloud container clusters delete version-cluster \
 забере пов’язаний LoadBalancer, IP, ноди, автоскейлер тощо
 
 Цього більш ніж достатньо.
+
+Після видалення кластера:
+
+gcloud container clusters list
