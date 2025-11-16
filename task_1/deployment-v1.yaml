@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: version-app-v1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: version-app
+      version: "1.0.0"
+  template:
+    metadata:
+      labels:
+        app: version-app
+        version: "1.0.0"
+    spec:
+      containers:
+      - name: version-app
+        image: yurabeloded/version-app:v1.0.0
+        env:
+        - name: VERSION
+          value: "1.0.0"
+        ports:
+        - containerPort: 8080
