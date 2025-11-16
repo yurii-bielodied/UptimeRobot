@@ -328,3 +328,26 @@ Version App v2
 коли була доступна Version: 1.0.0
 
 з якого моменту стала Version: 2.0.0
+
+
+**Видалення кластера. Дуже важливо!**
+
+Подивитись список кластерів:
+
+gcloud container clusters list
+
+
+Припустимо, кластер називається version-cluster і в зоні europe-west4-a:
+
+gcloud container clusters delete version-cluster \
+  --zone europe-west4-a
+
+Попросять підтвердити y.
+
+Видалення кластера:
+
+знищить усі namespace-и, deployments, services, pods в ньому
+
+забере пов’язаний LoadBalancer, IP, ноди, автоскейлер тощо
+
+Цього більш ніж достатньо.
